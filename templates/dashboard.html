@@ -1,0 +1,404 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Emotion Analyzer</title>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="template language" name="keywords">
+    <meta content="Tamerlan Soziev" name="author">
+    <meta content="Emotion Analyzer" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="{% static 'images/favicon.ico' %}" rel="shortcut icon">
+    <link href="{% static 'apple-touch-icon.png' %}" rel="apple-touch-icon">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet" type="text/css">
+    <link href="{% static 'bower_components/select2/dist/css/select2.min.css' %}" rel="stylesheet">
+    <link href="{% static 'bower_components/bootstrap-daterangepicker/daterangepicker.css' %}" rel="stylesheet">
+    <link href="{% static 'bower_components/dropzone/dist/dropzone.css' %}" rel="stylesheet">
+    <link href="{% static 'bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'bower_components/fullcalendar/dist/fullcalendar.min.css' %}" rel="stylesheet">
+    <link href="{% static 'bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css' %}" rel="stylesheet">
+    <link href="{% static 'bower_components/slick-carousel/slick/slick.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+</head>
+
+<body class="menu-position-side menu-side-left full-screen">
+    <div class="all-wrapper solid-bg-all">
+        <div class="search-with-suggestions-w">
+            <div class="search-with-suggestions-modal">
+                <div class="element-search">
+                    <input class="search-suggest-input" placeholder="Start typing to search..." type="text">
+                    <div class="close-search-suggestions">
+                        <i class="os-icon os-icon-x"></i>
+                    </div>
+                    </input>
+                </div>
+            </div>
+        </div>
+        <div class="layout-w">
+            <!--------------------
+        START - Mobile Menu
+        -------------------->
+            <div class="menu-mobile menu-activated-on-click color-scheme-dark">
+                <div class="mm-logo-buttons-w">
+                    <a class="mm-logo" href="/dashboard"><img src="{% static 'images/company-icon-32.png' %}"><span>Emotion Analyzer</span></a>
+                    <div class="mm-buttons">
+                        <div class="content-panel-open">
+                            <div class="os-icon os-icon-grid-circles"></div>
+                        </div>
+                        <div class="mobile-menu-trigger">
+                            <div class="os-icon os-icon-hamburger-menu-1"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-and-user">
+                    <!--------------------
+            START - Mobile Menu List
+            -------------------->
+                    <ul class="main-menu">
+                        <li class="has-sub-menu">
+                            <a href="/dashboard">
+                                <div class="icon-w">
+                                    <div class="os-icon os-icon-layout"></div>
+                                </div>
+                                <span>Emotion Analyzer</span></a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="/dashboard">Dashboard</a>
+                                </li>
+                            </ul>
+                            <!-- <ul class="sub-menu">
+                                <li>
+                                    <a href="/video">Video</a>
+                                </li>
+                            </ul> -->
+                        </li>
+                        <!-- <li class="has-sub-menu">
+                            <a href="#">
+                                <div class="icon-w">
+                                    <div class="os-icon os-icon-users"></div>
+                                </div>
+                                <span>Users</span></a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="bsprofile.html">Profile</a>
+                                </li>
+                            </ul>
+                        </li> -->
+                    </ul>
+                    <!--------------------
+            END - Mobile Menu List
+            -------------------->
+                </div>
+            </div>
+            <!--------------------
+        END - Mobile Menu
+        -------------------->
+            <!--------------------
+        START - Main Menu
+        -------------------->
+            <div class="menu-w color-scheme-dark color-style-bright menu-position-side menu-side-left menu-layout-mini sub-menu-style-over sub-menu-color-bright selected-menu-color-light menu-activated-on-hover menu-has-selected-link">
+                <div class="logo-w">
+                    <a class="logo" href="/dashboard">
+                        <a href="/dashboard"><img alt="" src="{% static 'images/company-icon-256.png' %}"></a>
+                        <div class="logo-label">
+                            Emotion Analyzer
+                        </div>
+                    </a>
+                </div>
+                <h1 class="menu-page-header">
+                    Page Header
+                </h1>
+                <ul class="main-menu">
+                    <li class="sub-header">
+                        <span>Layouts</span>
+                    </li>
+                    <li class="selected has-sub-menu">
+                        <a href="/dashboard">
+                            <div class="icon-w">
+                                <div class="os-icon os-icon-layout"></div>
+                            </div>
+                            <span>Dashboard</span></a>
+                        <div class="sub-menu-w">
+                            <div class="sub-menu-header">
+                                Dashboard
+                            </div>
+                            <div class="sub-menu-icon">
+                                <i class="os-icon os-icon-layout"></i>
+                            </div>
+                            <div class="sub-menu-i">
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="/dashboard">Dashboard</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- <div class="sub-menu-i">
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="/video">Video</a>
+                                    </li>
+                                </ul>
+                            </div> -->
+                        </div>
+                    </li>
+                    <!-- <li class=" has-sub-menu">
+                        <a href="#">
+                            <div class="icon-w">
+                                <div class="os-icon os-icon-users"></div>
+                            </div>
+                            <span>Users</span></a>
+                        <div class="sub-menu-w">
+                            <div class="sub-menu-header">
+                                Users
+                            </div>
+                            <div class="sub-menu-icon">
+                                <i class="os-icon os-icon-users"></i>
+                            </div>
+                            <div class="sub-menu-i">
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="bsprofile.html">Profile</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li> -->
+                </ul>
+
+            </div>
+            <!--------------------
+        END - Main Menu
+        -------------------->
+            <div class="content-w">
+                <!--------------------
+          START - Top Bar
+          -------------------->
+                <div class="top-bar color-scheme-light">
+                    <ul>
+                        <li class="active">
+                            <a href="#">Home</a>
+                        </li>
+                    </ul>
+                    {% if user.is_authenticated %}
+                    <div class="float-right">
+                        <ul>
+                            <li class="nav-item" style="list-style-type: none">
+                                Hi {{ user.username }}!
+                                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    {% endif %}
+                </div>
+                <!--------------------
+          END - Top Bar
+          -------------------->
+                <div class="content-i">
+                    <div class="content-box">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <div class="element-wrapper">
+                                    <div class="element-box">
+                                        <!--START - Transactions Table-->
+                                        <div class="element-wrapper">
+                                            <h6 class="element-header">
+                                                Video List <button class="btn btn-primary btn-sm mx-3" data-toggle='modal' data-target='#onboardingWideFormModal'><i class="os-icon os-icon-ui-22"></i><span> Add Video</span></button>
+                                            </h6>
+
+                                            <div class="element-box-tp">
+                                                {% if files %}
+                                                <div class="table-responsive">
+                                                    <table class="table table-padded">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>
+                                                                    URL
+                                                                </th>
+                                                                <th>
+                                                                    Uploaded by
+                                                                </th>
+                                                                <th>
+                                                                    Date
+                                                                </th>
+                                                                <th>
+                                                                    Analyze
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            {% for file in files %}
+                                                            <tr>
+                                                                <td>
+                                                                    <span>{{file.url}}</span>
+                                                                </td>
+                                                                <td>
+                                                                    <span>{{file.user}}</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <span>{{file.date}}</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <a href="/analyze?videoid={{file.pk}}"><i class="os-icon os-icon-file"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                            {% endfor %}
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                        <!--END - Transactions Table-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer id="footer" class="color-scheme-light color-style-default ">
+                    <div class="container-fluid pt-3 pb-3">
+                        <div class="row text-center">
+                            <div class="col-12 text-muted">
+                                <p>¿Do you need Support? Join us <a href="#">Emotion Analyzer</a></p>
+                                <p><a class="gray-text" href="#">Privacy</a> | <a class="gray-text" href="#">TOS</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+
+        </div>
+        <div class="display-type"></div>
+
+    </div>
+    <div aria-hidden="true" class="onboarding-modal modal fade animated" id="onboardingWideFormModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-centered" role="document">
+            <div class="modal-content text-center">
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span class="close-label">Cerrar</span><span class="os-icon os-icon-close"></span></button>
+                <div class="onboarding-side-by-side">
+
+                    <div class="onboarding-media">
+                        <img alt="" src="{% static 'img/bigicon1.png' %}" width="200px">
+                    </div>
+                    <div class="onboarding-content with-gradient">
+                        <h4 class="onboarding-title">
+                            Video Register
+                        </h4>
+                        <div class="onboarding-text">
+
+
+                        </div>
+                        <form method="POST" action="/subir_video" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">
+                                <!-- <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="">Name</label>
+                                        <input class="form-control" placeholder="Name" type="text">
+                                    </div>
+                                </div> -->
+                                <!-- <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="">Description</label>
+                                        <input class="form-control" placeholder="Description" type="text">
+                                    </div>
+                                </div> -->
+                                <!-- <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="">Date</label>
+                                        <input class="form-control" name="fecha" type="date">
+                                    </div>
+                                </div> -->
+                                <div class="col-9">
+                                    <label for="">Upload video</label><br>
+                                    <input type="file" name="file" class="file_multi_video" accept="video/*">
+                                </div>
+                                <div class="col-9 pt-3">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h5 class="text-muted">Video Preview</h5>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 text-center">
+                                            <video width="400" controls>
+                                                <source src="mov_bbb.mp4" id="video_here">
+                                                Your browser does not support HTML5 video.
+                                            </video>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 text-right">
+                                    <input class="mr-2 mb-2 btn btn-lg btn-success" type="submit" name="registro" value="Save video"></input>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'bower_components/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'bower_components/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'bower_components/moment/moment.js' %}"></script>
+    <script src="{% static 'bower_components/chart.js/dist/Chart.min.js' %}"></script>
+    <script src="{% static 'bower_components/select2/dist/js/select2.full.min.js' %}"></script>
+    <script src="{% static 'bower_components/jquery-bar-rating/dist/jquery.barrating.min.js' %}"></script>
+    <script src="{% static 'bower_components/ckeditor/ckeditor.js' %}"></script>
+    <script src="{% static 'bower_components/bootstrap-validator/dist/validator.min.js' %}"></script>
+    <script src="{% static 'bower_components/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+    <script src="{% static 'bower_components/ion.rangeSlider/js/ion.rangeSlider.min.js' %}"></script>
+    <script src="{% static 'bower_components/dropzone/dist/dropzone.js' %}"></script>
+    <script src="{% static 'bower_components/editable-table/mindmup-editabletable.js' %}"></script>
+    <script src="{% static 'bower_components/datatables.net/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js' %}"></script>
+    <script src="{% static 'bower_components/fullcalendar/dist/fullcalendar.min.js' %}"></script>
+    <script src="{% static 'bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js' %}"></script>
+    <script src="{% static 'bower_components/tether/dist/js/tether.min.js' %}"></script>
+    <script src="{% static 'bower_components/slick-carousel/slick/slick.min.js' %}"></script>
+    <script src="{% static 'bower_components/bootstrap/js/dist/util.js' %}"></script>
+    <script src="{% static 'bower_components/bootstrap/js/dist/alert.js' %}"></script>
+    <script src="{% static 'bower_components/bootstrap/js/dist/button.js' %}"></script>
+    <script src="{% static 'bower_components/bootstrap/js/dist/carousel.js' %}"></script>
+    <script src="{% static 'bower_components/bootstrap/js/dist/collapse.js' %}"></script>
+    <script src="{% static 'bower_components/bootstrap/js/dist/dropdown.js' %}"></script>
+    <script src="{% static 'bower_components/bootstrap/js/dist/modal.js' %}"></script>
+    <script src="{% static 'bower_components/bootstrap/js/dist/tab.js' %}"></script>
+    <script src="{% static 'bower_components/bootstrap/js/dist/tooltip.js' %}"></script>
+    <script src="{% static 'bower_components/bootstrap/js/dist/popover.js' %}"></script>
+    <script src="{% static 'js/demo_customizer.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-XXXXXXX-9', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>
+<script type="text/javascript"></script>
+<script>
+    $(document).on("change", ".file_multi_video", function(evt) {
+        var $source = $('#video_here');
+        $source[0].src = URL.createObjectURL(this.files[0]);
+        $source.parent()[0].load();
+    });
+</script>
