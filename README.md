@@ -1,4 +1,4 @@
-There is also an instruction video but in the video I skip step 1 because I already installed pipenv2. Also the video has no sounds, so just use it to guide yourself. 
+ * Run Project
 
 Step 0
 Verify you have python 3.6 installed, 64 bits. If you have 3.7 tensorflow1 won't work.
@@ -34,7 +34,7 @@ go to localhost:8000/admin
 The administrator username is admin and pw is admin123
 
 
-*Important 
+* Important 
 
 - Download fer2013 dataset from --> https://www.kaggle.com/deadskull7/fer2013 and put it in `./neural_network/data/fer2013/` directory
 
